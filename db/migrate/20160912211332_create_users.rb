@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :showdown_handle
       t.string :TCG_handle
       t.string :favorite_pkmn
+      t.integer :trades, default: 0
 
       t.timestamps
     end

@@ -1,0 +1,38 @@
+<div class="container">
+<div id="poke-info">
+      <table>
+        <tr>
+          <td><img src="<%= @user.avatar %>"></td>
+          <th><%= @user.username.capitalize %></th>
+        </tr>
+        <tr>
+          <th class="user-info">About:</th>
+          <td><%= @user.about %></td>
+        </tr>
+        <tr>
+          <th class="user-info">Location:</th>
+          <td><%= @user.location %></td>
+        </tr>
+        <tr>
+          <th class="user-info">IGN:</th>
+          <td><%= @user.IGN %></td>
+        </tr>
+        <tr>
+          <th class="user-info">Showdown Handle:</th>
+          <td><%= @user.showdown_handle %></td>
+        </tr>
+        <tr>
+          <th class="user-info">TCG Handle:</th>
+          <td><%= @user.TCG_handle %></td>
+        </tr>
+        <tr>
+          <th class="user-info">Favorite Pokemon:</th>
+          <td><%= @user.favorite_pkmn %></td>
+        </tr>
+        <tr>
+          <th class="user-info">Trades:</th>
+          <td><%= @user.trades %></td>
+        </tr>
+      </table>
+    </div>
+</div>

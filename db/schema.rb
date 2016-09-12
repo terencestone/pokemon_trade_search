@@ -19,16 +19,16 @@ ActiveRecord::Schema.define(version: 20160912211448) do
     t.string   "name",        null: false
     t.text     "description"
     t.string   "sprite"
-    t.integer  "user_id"
+    t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_pokemons_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "email",           null: false
+    t.string   "username",                    null: false
+    t.string   "password_digest",             null: false
+    t.string   "email",                       null: false
     t.string   "location"
     t.string   "avatar"
     t.text     "about"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20160912211448) do
     t.string   "showdown_handle"
     t.string   "TCG_handle"
     t.string   "favorite_pkmn"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "trades",          default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_foreign_key "pokemons", "users"
