@@ -1,55 +1,54 @@
-<form id="new-user" action="/users" method="post">
-  <table>
+<%= form_for @user, html: {id: 'new-user'} do |f| %>
 
     <tr>
-      <td><label for= "username">Username</label></td>
-      <td><input type="text" name="user[username]"></td>
+      <td><%= f.label :username %> </td>
+      <td><%= f.text_field :username %></td>
     </tr>
 
     <tr>
-    <td><label for= "email">Email</label></td>
-    <td><input type="text" name="user[email]"></td>
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email %></td>
     </tr>
 
     <tr>
-    <td><label for= "password">Password</label></td>
-    <td><input type="password" name="user[password]"></td>
+    <td><%= f.label :password %></td>
+    <td><%= f.password_field :password %></td>
     </tr>
 
     <tr>
-    <td><label for= "location">Location</label></td>
-    <td><input type="text" name="user[location]"></td>
+    <td><%= f.label :location %></td>
+    <td><%= f.text_field :location %></td>
     </tr>
 
     <tr>
-    <td><label for= "avatar">Avatar</label></td>
-    <td><input type="text" name="user[avatar]" placeholder="Add a link to a small picture"></td>
+    <td><%= f.label :avatar %></td>
+    <td><%= f.text_field :avatar, placeholder: "Add a link to a small picture" %></td>
     </tr>
 
     <tr>
-    <td><label for= "IGN">DS IGN</label></td>
-    <td><input type="text" name="user[IGN]"></td>
+    <td><%= f.label :IGN %></td>
+    <td><%= f.text_field :IGN %></td>
     </tr>
 
     <tr>
-    <td><label for= "showdown_handle">Showdown Handle</label></td>
-    <td><input type="text" name="user[showdown_handle]"></td>
+    <td><%= f.label :showdown_handle %></td>
+    <td><%= f.text_field :showdown_handle %></td>
     </tr>
 
     <tr>
-    <td><label for= "TCG_handle">Card Game Handle</label></td>
-    <td><input type="text" name="user[TCG_handle]"></td>
+    <td><%= f.label :TCG_handle %></td>
+    <td><%= f.text_field :TCG_handle %></td>
     </tr>
 
     <tr>
-    <td><label for= "favorite_pokemon">Favorite Pokemon</label></td>
-    <td><input type="text" name="user[favorite_pkmn]"></td>
+    <td><%= f.label :favorite_pkmn %></td>
+    <td><%= f.text_field :favorite_pkmn %></td>
     </tr>
 
     <tr>
-    <td><label for= "about">About</label></td>
-    <td><textarea rows="10" cols="50" name="user[about]"></textarea></td>
+    <td><%= f.label :about %></td>
+    <td><%= f.text_area :about %></td>
     </tr>
   </table>
-  <input id="submit" type="submit" name="Create!">
-</form>
+  <%= f.submit %>
+<% end %>
