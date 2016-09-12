@@ -4,7 +4,7 @@ class CreatePokemons < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.text :description
       t.string :sprite
-      t.references :user, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

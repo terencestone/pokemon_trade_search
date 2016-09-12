@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+glob = User.create(username: "Glob", password: '123456', email: 'glob@glob.com', favorite_pkmn: 'Muk')
+tmoney = User.create(username: "T-Money", password: '123456', email: 'tmoney@tmoney.com', favorite_pkmn: 'Gengar', location: "Your mom's house", :IGN => 'T-Money', showdown_handle: 'T-Money180', :TCG_handle => 'T-Money')
+
+pokemon_arr = ["blastoise", "pikachu", "gengar", "mew", "gligar", "dragonite", "garchomp", "greninja", "lucario" ]
+
+pokemon_arr.each do |name|
+  pokemon = Pokemon.new(name: name, user: [glob, tmoney].sample)
+  pokemon.save
+end
+
