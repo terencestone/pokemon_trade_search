@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'json', '~> 1.8', '>= 1.8.3'
 
+gem 'react-rails', '~> 1.7', '>= 1.7.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
