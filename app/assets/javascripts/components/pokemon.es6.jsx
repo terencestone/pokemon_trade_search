@@ -8,10 +8,10 @@ class Pokemon extends React.Component {
         <table>
           <tbody>
             <tr>
-              <th colSpan="2">{this.props.data.name}</th>
+              <th colSpan="2">{this.props.name}</th>
             </tr>
             <tr>
-              <td><img src={this.props.data.sprites.front_default} /></td>
+              <td><img src={this.props.sprite} /></td>
               <td>{this.props.descript}</td>
             </tr>
           </tbody>

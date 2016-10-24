@@ -13,22 +13,16 @@ class SearchBar extends React.Component {
         method: 'get'
       })
       .done((response) => {
-        this.props.onSearch(response)
+        this.props.onSearch({name: response.name, sprite: response.sprites.front_default})
+      })
+      $.ajax({
+        url: `http://pokeapi.co/api/v2/pokemon-species/${pkmn}/`,
+        method: 'get'
+      })
+      .done((response) => {
+        this.props.descript(response.flavor_text_entries[1].flavor_text)
       })
     }
-
-    // getDescription(event) {
-    //   event.preventDefault();
-    //   let pkmn = this.refs.pSearch.value
-    //   $.ajax({
-    //     url: `http://pokeapi.co/api/v2/pokemon-species/${pkmn}/`,
-    //     method: 'get'
-    //   })
-    //   .done((response) => {
-    //     debugger
-    //     this.props.onSearch(response.flavor_text_entries[1].flavor_text)
-    //   })
-    // }
 
   render() {
     return(
