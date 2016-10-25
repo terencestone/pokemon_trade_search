@@ -13,10 +13,10 @@
   <ul>
     <% if !logged_in? %>
     <li><a href="/users/new">Sign up</a></li>
-    <li><a href="/login">Log in</a></li>
+    <li><a href="/">Log in</a></li>
     <% else %>
     <li>Hello, <a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
-    <li><a href="/logout">Sign out</a></li>
+    <li><a href="/">Sign out</a></li>
     <% end %>
     <li><a href="/">Home</a></li>
   </ul>
