@@ -9,14 +9,14 @@ class SearchBar extends React.Component {
       event.preventDefault();
       let pkmn = this.refs.pkmnSearch.value
       $.ajax({
-        url: `http://pokeapi.co/api/v2/pokemon/${pkmn}/`,
+        url: `https://pokeapi.co/api/v2/pokemon/${pkmn}/`,
         method: 'get'
       })
       .done((response) => {
         this.props.onSearch({name: response.name, sprite: response.sprites.front_default})
       })
       $.ajax({
-        url: `http://pokeapi.co/api/v2/pokemon-species/${pkmn}/`,
+        url: `https://pokeapi.co/api/v2/pokemon-species/${pkmn}/`,
         method: 'get'
       })
       .done((response) => {
