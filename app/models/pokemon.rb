@@ -1,5 +1,5 @@
-# require 'net/http'
-# require 'uri'
+require 'net/http'
+require 'uri'
 
 class Pokemon < ApplicationRecord
   before_save :sprite_image, :description_body
@@ -20,7 +20,7 @@ class Pokemon < ApplicationRecord
     if self.name == 'deoxys'
       self.name = 'deoxys-normal'
     end
-    info = parse_json("http://pokeapi.co/api/v2/pokemon/#{self.name}/")
+    info = parse_json("https://pokeapi.co/api/v2/pokemon/#{self.name}/")
     self.sprite = info['sprites']['front_default']
   end
 
@@ -28,7 +28,7 @@ class Pokemon < ApplicationRecord
     if self.name == 'deoxys-normal'
       self.name = 'deoxys'
     end
-    body = parse_json("http://pokeapi.co/api/v2/pokemon-species/#{self.name}/")
+    body = parse_json("https://pokeapi.co/api/v2/pokemon-species/#{self.name}/")
     text = ""
     body['flavor_text_entries'].each do |hash|
       hash.each do |k,v|
